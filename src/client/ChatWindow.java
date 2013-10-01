@@ -97,6 +97,7 @@ public class ChatWindow extends javax.swing.JFrame implements Runnable {
 			}
 			pack();
 			setSize(500, 600);
+			//Infinite loop to listen for new messages coming in through the socket.
 			while (true){
 				message = in.readLine();
 				loginSender = in.readLine();
@@ -131,7 +132,7 @@ public class ChatWindow extends javax.swing.JFrame implements Runnable {
 	public void run() {
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
-		this.setTitle("client");
+		this.setTitle("Java Instant Chat - Client");
 		initGUI();
 	}
 

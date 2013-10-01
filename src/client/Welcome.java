@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import javax.swing.WindowConstants;
@@ -31,8 +32,8 @@ public class Welcome extends javax.swing.JFrame {
 	private JLabel jLabel3;
 	private JButton jButton1;
 	private JButton jButton2;
-	private JTextField jTextField2;
 	private JTextField jTextField1;
+	private JPasswordField jPasswordField1;
 	private JLabel jLabel2;
 	private JLabel jLabel1;
 	private JPanel jPanel2;
@@ -48,6 +49,7 @@ public class Welcome extends javax.swing.JFrame {
 				Welcome inst = new Welcome();
 				inst.setLocationRelativeTo(null);
 				inst.setVisible(true);
+				inst.setTitle("Java Instant Chat Client");
 			}
 		});
 	}
@@ -98,8 +100,8 @@ public class Welcome extends javax.swing.JFrame {
 					jPanel2.add(jTextField1, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 				}
 				{
-					jTextField2 = new JTextField();
-					jPanel2.add(jTextField2, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+					jPasswordField1 = new JPasswordField();
+					jPanel2.add(jPasswordField1, new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 				}
 				{
 					jButton1 = new JButton();
@@ -138,7 +140,7 @@ public class Welcome extends javax.swing.JFrame {
 	         
 	        socket = new Socket("127.0.0.1",2009);
 	        login = jTextField1.getText();
-	        password = jTextField2.getText();	        
+	        password = new String(jPasswordField1.getPassword());	        
 	        LoginCheck lc = new LoginCheck(socket);
 	        IDcheck = lc.Check(login, password);
 	        if (!IDcheck){

@@ -4,6 +4,12 @@ import java.io.*;
 import java.net.*;
  
  
+/**
+ * Class with an infinite loop waiting for a client to connect to the ServerSocket.
+ * 
+ * @author Ferhan Serbest
+ *
+ */
 public class Accept implements Runnable{
  
     private ServerSocket socketserver = null;

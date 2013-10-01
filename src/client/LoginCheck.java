@@ -42,7 +42,7 @@ public class LoginCheck {
 				case 1 : return true; 
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error connecting to the Server.");
 		}
          
 		return false;

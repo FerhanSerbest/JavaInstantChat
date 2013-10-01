@@ -35,7 +35,7 @@ public class Start extends javax.swing.JFrame {
 				Start inst = new Start();
 				inst.setLocationRelativeTo(null);
 				inst.setVisible(true);
-				inst.setTitle("JavaInstantChat");
+				inst.setTitle("Java Instant Chat Server");
 			}
 		});
 	}

@@ -52,9 +52,13 @@ public class Auth implements Runnable {
                         
             
              
-        } catch (IOException | SQLException e) {
+        } catch (IOException e) {
              
-            e.printStackTrace();
+        	System.out.println("Error connecting to the Server.");
+            
+		} catch (SQLException e) {
+			
+			System.out.println("Error connecting to the SQL Server.");
 		}
     }
      

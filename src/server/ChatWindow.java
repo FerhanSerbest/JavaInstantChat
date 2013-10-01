@@ -55,7 +55,7 @@ public class ChatWindow extends javax.swing.JFrame {
 		login = l;
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
-		this.setTitle("server");
+		this.setTitle("Java Instant Chat - Server");
 		initGUI();
 	}
 
@@ -64,7 +64,6 @@ public class ChatWindow extends javax.swing.JFrame {
 	 */
 	private void initGUI() {
 		try {
-			System.out.println("initgui1");
 			out = new PrintWriter(socket.getOutputStream());
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 	    	sdf = new SimpleDateFormat("HH:mm");
@@ -98,7 +97,6 @@ public class ChatWindow extends javax.swing.JFrame {
 					jButton1 = new JButton();
 					jPanel2.add(jButton1, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 					jButton1.setText("Send");
-					System.out.println("initgui7");
 					jButton1.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent evt) {
 							jButton1ActionPerformed(evt);
@@ -108,6 +106,7 @@ public class ChatWindow extends javax.swing.JFrame {
 			}
 			pack();
 			setSize(500, 600);
+			//Infinite loop to listen for new messages coming in through the socket.
 			while (true){
 				message = in.readLine();
 				loginSender = in.readLine();
